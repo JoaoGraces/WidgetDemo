@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Kitchen: View {
+    @State var value: Double = 0
     var body: some View {
         VStack {
             Text("Cuide do seu Buddy")
@@ -22,7 +23,12 @@ struct Kitchen: View {
                     .trim(from: 0, to: 0.3)
                     .frame(height: 40)
                     .padding()
+             
             }
+            ProgressBar(value: $value)
+                .frame(height: 40)
+                .padding()
+                
                 
             Spacer()
             Image("Buddy")
@@ -30,7 +36,7 @@ struct Kitchen: View {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
             Button {
-                
+                value += 0.1
             } label: {
                 RoundedRectangle(cornerRadius: 25)
                     .frame(height: 50)

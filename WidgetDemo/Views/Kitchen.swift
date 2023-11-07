@@ -25,7 +25,7 @@ struct Kitchen: View {
                     .padding()
              
             }
-            ProgressBar(value: $value)
+            ProgressBar(value: $value, frase: "alimentado")
                 .frame(height: 40)
                 .padding()
                 
@@ -34,9 +34,14 @@ struct Kitchen: View {
             Image("Buddy")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200, height: 200)
+                .frame(width: 50 + value * 200, height: 50 + value * 200)
+            
+            Spacer()
+
             Button {
-                value += 0.1
+                if value < 0.9 {
+                    value += 0.1
+                }
             } label: {
                 RoundedRectangle(cornerRadius: 25)
                     .frame(height: 50)
@@ -56,7 +61,6 @@ struct Kitchen: View {
                         }
                     )
             }
-            Spacer()
         }
     }
 }

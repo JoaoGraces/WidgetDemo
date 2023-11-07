@@ -13,6 +13,7 @@ struct ProgressBar: View {
     // Valores relacionados ao passar do tempo
     var attRate:  Double = 0.1
     var interval: Double = 10
+    var frase : String = ""
     var isTimeActivated: Bool = false
     
     var body: some View {
@@ -27,7 +28,7 @@ struct ProgressBar: View {
                     .animation(.linear(duration: 0.5), value: value)
                 HStack {
                     Spacer()
-                    Text(String(format: "%.0f", value * 100) + "% alimentado")
+                    Text(String(format: "%.0f", value * 100) + "% \(frase)")
                 }
                 .padding(.horizontal)
            

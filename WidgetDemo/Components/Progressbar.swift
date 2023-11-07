@@ -1,19 +1,14 @@
-//
-//  Progressbar.swift
-//  WidgetDemo
-//
-//  Created by João Victor Bernardes Gracês on 06/11/23.
-//
-
 import SwiftUI
-
+import WidgetKit
+// Barra de fome
 struct ProgressBar: View {
-    @Binding var value: Double
-
+    @Binding var value: Int
+    @AppStorage("hunger", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var hunger: Int = 0
+    
     // Valores relacionados ao passar do tempo
-    var attRate:  Double = 0.1
-    var interval: Double = 10
-    var isTimeActivated: Bool = false
+    var attRate: Int = 10
+    var interval: Double = 3
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -21,36 +16,42 @@ struct ProgressBar: View {
                 Rectangle().frame(width: geometry.size.width , height: geometry.size.height)
                     .opacity(0.3)
                     .foregroundColor(Color(UIColor.systemTeal))
-                
-                Rectangle().frame(width: min(CGFloat(self.value)*geometry.size.width, geometry.size.width), height: geometry.size.height)
+                Rectangle()
+                    .frame(width: max(min(CGFloat(value) * geometry.size.width / 100, geometry.size.width), 0), height: geometry.size.height)
                     .foregroundColor(Color(UIColor.systemBlue))
                     .animation(.linear(duration: 0.5), value: value)
-                HStack {
-                    Spacer()
-                    Text(String(format: "%.0f", value * 100) + "% alimentado")
-                }
-                .padding(.horizontal)
-           
+                
             }.cornerRadius(45.0)
         }
-        .onAppear() {
-            if value > 0 && isTimeActivated {
-                startTime()
-            }
-        }
     }
-    
-    func startTime() {
-        Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
-            value -= attRate
-            if value <= 0.0 {
-                timer.invalidate() // Para o timer quando o valor chega a 0 ou menos
-      
-            } else {
-              
-            }
-        }
-    }
+
+        // Quando a view aparece é carregado o valor do binding
+//        .onAppear() {
+//            value = hunger
+//            if value > 0 {
+//                startTime()
+//            }
+//        }
+//        .onChange(of: hunger) { oldValue, newValue in
+//            value = newValue
+//            hunger = value
+//            // Caso o valor antigo seja menor que 0 ele chama a funcao novamente para ela entrar no else e parar o timer
+//            if oldValue <= 0 {
+//                startTime()
+//            }
+//        }
+//    }
+//
+//    func startTime() {
+//        Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
+//            if value <= 0 {
+//                timer.invalidate()
+//            } else {
+//                hunger -= attRate
+//                value = hunger
+//                // Fazer o widget atualizar
+//                WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
+//            }
+//        }
+//    }
 }
-
-

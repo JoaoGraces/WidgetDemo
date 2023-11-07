@@ -54,7 +54,6 @@ struct ContentView: View {
                     }
                     
                     //Manually reload the widget
-                    
                     WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
                 } label: {
                     ZStack{

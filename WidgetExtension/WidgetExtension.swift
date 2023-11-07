@@ -13,11 +13,11 @@ struct Provider: TimelineProvider {
     let data = DataService()
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), streak: data.progress())
+        SimpleEntry(date: Date(), streak: Int(data.progress()))
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), streak: data.progress())
+        let entry = SimpleEntry(date: Date(), streak: Int(data.progress()))
         completion(entry)
     }
 
@@ -46,39 +46,37 @@ struct WidgetExtensionEntryView : View {
     var entry: Provider.Entry
     
     let data = DataService()
+    @AppStorage("hunger", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var hunger: Int = 0
 
     var body: some View {
         VStack{
-            ZStack{
-                
-                Circle()
-                    .stroke(Color.black.opacity(0.12), lineWidth: 15)
-                
-                Circle()
-                    .trim(from: 0.0, to: CGFloat(data.progress())/100)
-                    .stroke(.pink.opacity(0.8), style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
-                    .rotationEffect(.degrees(-90))
-                
-                VStack{
-                    Text("\(data.progress())")
-                        .font(.system(size: 40))
-                        .bold()
-                    
-                    
+            HStack{
+                // Progress Bar de fome
+                GeometryReader { geometry in
+                    ZStack(alignment: .leading) {
+                        Rectangle().frame(width: geometry.size.width , height: geometry.size.height)
+                            .opacity(0.3)
+                            .foregroundColor(Color(UIColor.systemTeal))
+                        Rectangle()
+                            .frame(width: max(min(CGFloat(hunger) * geometry.size.width / 100, geometry.size.width), 0), height: geometry.size.height)
+                            .foregroundColor(Color(UIColor.systemBlue))
+                            .animation(.linear(duration: 0.5), value: hunger)
+                        
+                    }.cornerRadius(45.0)
                 }
-                .foregroundStyle(.pink)
-                .fontDesign(.rounded)
-                
+                    .frame(height: 20)
+                Button(intent: LogEntryAppIntent()){
+                    Image(systemName: "fork.knife.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25)
+                        .foregroundStyle(.green)
+                }
             }
-            .containerBackground(.black, for: .widget)
-            
-            Button(intent: LogEntryAppIntent()) {
-                Text("+1")
-                    .foregroundStyle(.pink)
-                    .font(.caption)
-                
-            }.backgroundStyle(.black.gradient)
-            
+           Spacer()
+            Image("Buddy")
+                .resizable()
+                .scaledToFit()
         }
     }
 }
@@ -90,7 +88,7 @@ struct WidgetExtension: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
                 WidgetExtensionEntryView(entry: entry)
-                    .containerBackground(.black.gradient, for: .widget)
+                    .containerBackground(Color("WidgetBG").gradient, for: .widget)
             } else {
                 WidgetExtensionEntryView(entry: entry)
                     .padding()

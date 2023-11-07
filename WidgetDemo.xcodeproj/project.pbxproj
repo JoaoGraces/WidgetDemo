@@ -21,6 +21,9 @@
 		8181AC0F2AF2EF1900453922 /* LogEntryAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181AC0E2AF2EF1900453922 /* LogEntryAppIntent.swift */; };
 		BA6BF9762AF991C30046D10E /* Kitchen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF9752AF991C30046D10E /* Kitchen.swift */; };
 		BA6BF9792AF99BD10046D10E /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF9782AF99BD10046D10E /* Progressbar.swift */; };
+		BA6BF97D2AFAAD020046D10E /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF9782AF99BD10046D10E /* Progressbar.swift */; };
+		BA6BF97F2AFAC9870046D10E /* TimeFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF97E2AFAC9870046D10E /* TimeFood.swift */; };
+		BA6BF9802AFAC98B0046D10E /* TimeFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF97E2AFAC9870046D10E /* TimeFood.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,7 @@
 		8181AC0E2AF2EF1900453922 /* LogEntryAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryAppIntent.swift; sourceTree = "<group>"; };
 		BA6BF9752AF991C30046D10E /* Kitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen.swift; sourceTree = "<group>"; };
 		BA6BF9782AF99BD10046D10E /* Progressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressbar.swift; sourceTree = "<group>"; };
+		BA6BF97E2AFAC9870046D10E /* TimeFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFood.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				BA6BF9782AF99BD10046D10E /* Progressbar.swift */,
+				BA6BF97E2AFAC9870046D10E /* TimeFood.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8181ABE62AF2C4BB00453922 /* ContentView.swift in Sources */,
+				BA6BF97F2AFAC9870046D10E /* TimeFood.swift in Sources */,
 				BA6BF9762AF991C30046D10E /* Kitchen.swift in Sources */,
 				BA6BF9792AF99BD10046D10E /* Progressbar.swift in Sources */,
 				8181ABE42AF2C4BB00453922 /* WidgetDemoApp.swift in Sources */,
@@ -280,9 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6BF97D2AFAAD020046D10E /* Progressbar.swift in Sources */,
 				8181AC0D2AF2D22100453922 /* DataService.swift in Sources */,
 				8181AC0F2AF2EF1900453922 /* LogEntryAppIntent.swift in Sources */,
 				8181ABFD2AF2CA6000453922 /* WidgetExtensionBundle.swift in Sources */,
+				BA6BF9802AFAC98B0046D10E /* TimeFood.swift in Sources */,
 				8181ABFF2AF2CA6000453922 /* WidgetExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,8 +33,7 @@ struct Kitchen: View {
             Spacer()
             Image("Buddy")
                 .resizable()
-                .scaledToFit()
-                .frame(width: 50 + value * 200, height: 50 + value * 200)
+                .frame(width: 50 + value * 200, height: 200)
             
             Spacer()
 
@@ -68,5 +67,3 @@ struct Kitchen: View {
 #Preview {
     Kitchen()
 }
-
-

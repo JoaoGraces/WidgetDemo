@@ -25,7 +25,12 @@ struct ProgressBar: View {
 
                 HStack {
                     Spacer()
-                    Text(String(format: "%.0f", value * 100) + "% \(frase)")
+                    if frase == "energia" {
+                        Text(String(format: "%.0f", value) + "% \(frase)")
+                    } else {
+                        Text(String(format: "%.0f", value * 100) + "% \(frase)")
+                    }
+                    
                 }
                 .padding(.horizontal)
            

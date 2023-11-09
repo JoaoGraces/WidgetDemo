@@ -13,8 +13,8 @@ struct LogEntryAppIntent: AppIntent {
     static var title: LocalizedStringResource = "Log an entry to your streak."
     
     static var description = IntentDescription("Adds 1 to your streak.")
-    
-    func perform() async throws -> some IntentResult & ReturnsValue {
+    // Intent para aumentar a barra / alimentar o buddy
+    func perform() async throws -> some IntentResult & ReturnsValue<Int> {
         
         let data = DataService()
         data.log()

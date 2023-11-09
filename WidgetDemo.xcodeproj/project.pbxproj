@@ -31,6 +31,7 @@
 		FD6F66612AFC0FB500798D74 /* InventarioUsuarioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66602AFC0FB500798D74 /* InventarioUsuarioView.swift */; };
 		FD6F66632AFC2AEF00798D74 /* ItemLoja.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66622AFC2AEF00798D74 /* ItemLoja.swift */; };
 		FD6F66652AFC2B3600798D74 /* ListaItensLoja.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66642AFC2B3600798D74 /* ListaItensLoja.swift */; };
+		FD6F66672AFD0EFE00798D74 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66662AFD0EFE00798D74 /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		FD6F66602AFC0FB500798D74 /* InventarioUsuarioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventarioUsuarioView.swift; sourceTree = "<group>"; };
 		FD6F66622AFC2AEF00798D74 /* ItemLoja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLoja.swift; sourceTree = "<group>"; };
 		FD6F66642AFC2B3600798D74 /* ListaItensLoja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaItensLoja.swift; sourceTree = "<group>"; };
+		FD6F66662AFD0EFE00798D74 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				FD6F65E22AFAB5B300798D74 /* Bedroom.swift */,
 				FD6F66542AFBFFE200798D74 /* LojaView.swift */,
 				FD6F66602AFC0FB500798D74 /* InventarioUsuarioView.swift */,
+				FD6F66662AFD0EFE00798D74 /* TabBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			files = (
 				FD6F66552AFBFFE200798D74 /* LojaView.swift in Sources */,
 				FD6F65E32AFAB5B300798D74 /* Bedroom.swift in Sources */,
+				FD6F66672AFD0EFE00798D74 /* TabBarView.swift in Sources */,
 				8181ABE62AF2C4BB00453922 /* ContentView.swift in Sources */,
 				BA6BF97F2AFAC9870046D10E /* TimeFood.swift in Sources */,
 				FD6F66612AFC0FB500798D74 /* InventarioUsuarioView.swift in Sources */,

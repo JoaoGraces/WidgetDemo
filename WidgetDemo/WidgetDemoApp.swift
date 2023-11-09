@@ -13,7 +13,7 @@ struct WidgetDemoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Bedroom().environment(\.managedObjectContext, viewModel.container.viewContext)
+            TabBarView().environment(\.managedObjectContext, viewModel.container.viewContext)
         }
     }
 }

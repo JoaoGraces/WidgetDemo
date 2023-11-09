@@ -2,7 +2,7 @@ import SwiftUI
 import WidgetKit
 // Barra de fome
 struct ProgressBar: View {
-    @Binding var value: Int
+    @Binding var value: Double
     @AppStorage("hunger", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var hunger: Int = 0
     
     // Valores relacionados ao passar do tempo

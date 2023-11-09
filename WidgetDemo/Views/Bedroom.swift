@@ -12,10 +12,31 @@ struct Bedroom: View {
     @State var estado : EstadoBuddy = .ACORDADO
     @State var timer : Timer?
     
+    @State var abriuLoja = false
+    @State var abriuInventario = false
+    
     var body: some View {
         VStack{
             HStack{
                 VStack (alignment: .leading){
+                    HStack{
+                        Spacer()
+                        Button {
+                            abriuInventario = true
+                        } label: {
+                            Image(systemName: "tray.fill")
+                                .font(.title2)
+                        }
+                        
+                        Button {
+                            abriuLoja = true
+                        } label: {
+                            Image(systemName: "cart")
+                                .font(.title2)
+                        }
+                    }.padding(.bottom)
+                    
+                    
                     Text("Como está seu buddy")
                         .font(.title)
                         .bold()
@@ -62,12 +83,18 @@ struct Bedroom: View {
                         Text("Acordar")
                             .foregroundStyle(.background)
                     }
-                    
                 }
-                
             }
             
-        }.onAppear(perform: {
+            
+            
+        }.sheet(isPresented: $abriuInventario, content: {
+            InventarioUsuarioView()
+        })
+        .sheet(isPresented: $abriuLoja, content: {
+            LojaView()
+        })
+        .onAppear(perform: {
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
                 if estado == .ACORDADO {
                     if nivelEnergia > 0 {
@@ -103,7 +130,7 @@ struct Bedroom: View {
 }
 
 enum EstadoBuddy {
-    case ACORDADO, DORMINDO, DORMINDO_DESCANSADO
+    case ACORDADO, DORMINDO
 }
 
 enum EstadoSonoBuddy {

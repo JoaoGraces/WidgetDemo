@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct WidgetDemoApp: App {
+    @StateObject var viewModel = AcessorioViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            Kitchen()
+            Bedroom().environment(\.managedObjectContext, viewModel.container.viewContext)
         }
     }
 }

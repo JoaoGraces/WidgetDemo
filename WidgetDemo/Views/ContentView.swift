@@ -21,7 +21,6 @@ struct ContentView: View {
             VStack (spacing: 60){
                 
                 ZStack{
-                    
                     Circle()
                         .stroke(Color.white.opacity(0.12), lineWidth: 20)
                     

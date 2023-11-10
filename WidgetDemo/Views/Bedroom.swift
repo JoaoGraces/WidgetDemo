@@ -15,7 +15,8 @@ struct Bedroom: View {
     @State var abriuLoja = false
     @State var abriuInventario = false
     
-    @State var imagem = Image("Buddy")
+    
+    @State var nomeImagem = "Buddy"
     
     
     @AppStorage("Energia", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var nivelEnergia : Double = 100
@@ -65,19 +66,21 @@ struct Bedroom: View {
             
             Spacer()
         
-            imagem
+            
+            Image(nomeImagem)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200)
+                
             
             Spacer()
             
             Button {
                 if estado == "acordado" {
-                    imagem = Image("BuddyDormindo")
+                    nomeImagem = "BuddyDormindo"
                     estado = "dormindo"
                 } else {
-                    imagem = Image("Buddy")
+                    nomeImagem = "Buddy"
                     estado = "acordado"
                 }
                 WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
@@ -105,8 +108,6 @@ struct Bedroom: View {
             LojaView()
         })
         .onAppear(perform: {
-            self.imagem = estado == "acordado" ? Image("Buddy") : Image("BuddyDormindo")
-            
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
                 if estado == "acordado" {
                     if nivelEnergia > 0 {
@@ -119,20 +120,13 @@ struct Bedroom: View {
                     
                     if nivelEnergia == 100 {
                         estado = "acordado"
+                        nomeImagem = "Buddy"
                         WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
                     }
                 }
                 
             }
         })
-    }
-    
-    func retornaImagem () -> Image{
-        if self.estado == "acordadoss" {
-            return Image("Buddy")
-        } else {
-            return Image("BuddyDormindo")
-        }
     }
     
     func aumentarEnergia () {

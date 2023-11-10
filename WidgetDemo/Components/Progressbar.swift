@@ -2,7 +2,7 @@ import SwiftUI
 import WidgetKit
 // Barra de fome
 struct ProgressBar: View {
-    @Binding var value: Int
+    @Binding var value: Double
     @AppStorage("hunger", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var hunger: Int = 0
     
     // Valores relacionados ao passar do tempo
@@ -25,7 +25,12 @@ struct ProgressBar: View {
 
                 HStack {
                     Spacer()
-                    Text(String(format: "%.0f", value * 100) + "% \(frase)")
+                    if frase == "energia" {
+                        Text(String(format: "%.0f", value) + "% \(frase)")
+                    } else {
+                        Text(String(format: "%.0f", value * 100) + "% \(frase)")
+                    }
+                    
                 }
                 .padding(.horizontal)
            

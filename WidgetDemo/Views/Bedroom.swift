@@ -6,14 +6,22 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct Bedroom: View {
-    @State var nivelEnergia : Double = 1
-    @State var estado : EstadoBuddy = .ACORDADO
+    //@State var nivelEnergia : Double = 100
     @State var timer : Timer?
     
     @State var abriuLoja = false
     @State var abriuInventario = false
+    
+    @State var imagem = Image("Buddy")
+    
+    
+    @AppStorage("Energia", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var nivelEnergia : Double = 100
+    
+    @AppStorage("EstaDormindo", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var estado : String = "acordado"
+
     
     var body: some View {
         VStack{
@@ -43,9 +51,9 @@ struct Bedroom: View {
                     ProgressBar(value: $nivelEnergia, frase: "energia")
                         .frame(height: 40)
                         .padding()
-                    if nivelEnergia > 0.5 {
+                    if nivelEnergia > 50 {
                         Text("Seu buddy está enérgico")
-                    } else if nivelEnergia > 0.1 {
+                    } else if nivelEnergia > 10 {
                         Text("Seu buddy está com sono")
                     } else {
                         Text("Seu buddy está morrendo de sono 😭")
@@ -57,26 +65,28 @@ struct Bedroom: View {
             
             Spacer()
         
-            if estado == .DORMINDO {
-                Image("Buddy")
-                    .rotationEffect(.degrees(90))
-            } else {
-                Image("Buddy")
-            }
+            imagem
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200)
             
             Spacer()
             
             Button {
-                if estado == .ACORDADO {
-                    estado = .DORMINDO
+                if estado == "acordado" {
+                    imagem = Image("BuddyDormindo")
+                    estado = "dormindo"
                 } else {
-                    estado = .ACORDADO
+                    imagem = Image("Buddy")
+                    estado = "acordado"
                 }
+                WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
+                
             } label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 12.0)
                         .frame(width: 200, height: 40)
-                    if estado == .ACORDADO {
+                    if estado == "acordado" {
                         Text("Dormir")
                             .foregroundStyle(.background)
                     } else {
@@ -95,18 +105,21 @@ struct Bedroom: View {
             LojaView()
         })
         .onAppear(perform: {
+            self.imagem = estado == "acordado" ? Image("Buddy") : Image("BuddyDormindo")
+            
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-                if estado == .ACORDADO {
+                if estado == "acordado" {
                     if nivelEnergia > 0 {
                         diminuirEnergia()
                     }
                 } else {
-                    if nivelEnergia < 1 {
+                    if nivelEnergia < 100 {
                         aumentarEnergia()
                     }
                     
-                    if nivelEnergia == 1 {
-                        estado = .ACORDADO
+                    if nivelEnergia == 100 {
+                        estado = "acordado"
+                        WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
                     }
                 }
                 
@@ -114,12 +127,19 @@ struct Bedroom: View {
         })
     }
     
+    func retornaImagem () -> Image{
+        if self.estado == "acordadoss" {
+            return Image("Buddy")
+        } else {
+            return Image("BuddyDormindo")
+        }
+    }
     
     func aumentarEnergia () {
-        nivelEnergia += 0.01
+        nivelEnergia += 1
     }
     func diminuirEnergia () {
-        nivelEnergia -= 0.01
+        nivelEnergia -= 1
     }
    
 }

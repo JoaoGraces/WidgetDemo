@@ -24,6 +24,16 @@
 		BA6BF97D2AFAAD020046D10E /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF9782AF99BD10046D10E /* Progressbar.swift */; };
 		BA6BF97F2AFAC9870046D10E /* TimeFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF97E2AFAC9870046D10E /* TimeFood.swift */; };
 		BA6BF9802AFAC98B0046D10E /* TimeFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF97E2AFAC9870046D10E /* TimeFood.swift */; };
+		FD6F65E32AFAB5B300798D74 /* Bedroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F65E22AFAB5B300798D74 /* Bedroom.swift */; };
+		FD6F66552AFBFFE200798D74 /* LojaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66542AFBFFE200798D74 /* LojaView.swift */; };
+		FD6F665D2AFC0B0600798D74 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD6F665B2AFC0B0600798D74 /* DataModel.xcdatamodeld */; };
+		FD6F665F2AFC0B8100798D74 /* AcessorioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F665E2AFC0B8100798D74 /* AcessorioViewModel.swift */; };
+		FD6F66612AFC0FB500798D74 /* InventarioUsuarioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66602AFC0FB500798D74 /* InventarioUsuarioView.swift */; };
+		FD6F66632AFC2AEF00798D74 /* ItemLoja.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66622AFC2AEF00798D74 /* ItemLoja.swift */; };
+		FD6F66652AFC2B3600798D74 /* ListaItensLoja.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66642AFC2B3600798D74 /* ListaItensLoja.swift */; };
+		FD6F66672AFD0EFE00798D74 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66662AFD0EFE00798D74 /* TabBarView.swift */; };
+		FD6F66692AFD27FF00798D74 /* BedroomWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */; };
+		FD6F666E2AFD615400798D74 /* TrocarEstadoAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +80,16 @@
 		BA6BF9752AF991C30046D10E /* Kitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen.swift; sourceTree = "<group>"; };
 		BA6BF9782AF99BD10046D10E /* Progressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressbar.swift; sourceTree = "<group>"; };
 		BA6BF97E2AFAC9870046D10E /* TimeFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFood.swift; sourceTree = "<group>"; };
+		FD6F65E22AFAB5B300798D74 /* Bedroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bedroom.swift; sourceTree = "<group>"; };
+		FD6F66542AFBFFE200798D74 /* LojaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LojaView.swift; sourceTree = "<group>"; };
+		FD6F665C2AFC0B0600798D74 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		FD6F665E2AFC0B8100798D74 /* AcessorioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcessorioViewModel.swift; sourceTree = "<group>"; };
+		FD6F66602AFC0FB500798D74 /* InventarioUsuarioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventarioUsuarioView.swift; sourceTree = "<group>"; };
+		FD6F66622AFC2AEF00798D74 /* ItemLoja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLoja.swift; sourceTree = "<group>"; };
+		FD6F66642AFC2B3600798D74 /* ListaItensLoja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaItensLoja.swift; sourceTree = "<group>"; };
+		FD6F66662AFD0EFE00798D74 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomWidgetView.swift; sourceTree = "<group>"; };
+		FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrocarEstadoAppIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +135,7 @@
 		8181ABE22AF2C4BB00453922 /* WidgetDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FD6F665A2AFC0AB300798D74 /* Persistence */,
 				8181AC0A2AF2D09A00453922 /* WidgetDemo.entitlements */,
 				8181ABE32AF2C4BB00453922 /* WidgetDemoApp.swift */,
 				BA6BF97A2AF99BE70046D10E /* Views */,
@@ -147,8 +168,10 @@
 			children = (
 				8181ABFC2AF2CA6000453922 /* WidgetExtensionBundle.swift */,
 				8181ABFE2AF2CA6000453922 /* WidgetExtension.swift */,
+				FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */,
 				8181AC0C2AF2D22100453922 /* DataService.swift */,
 				8181AC0E2AF2EF1900453922 /* LogEntryAppIntent.swift */,
+				FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */,
 				8181AC002AF2CA6100453922 /* Assets.xcassets */,
 				8181AC022AF2CA6100453922 /* Info.plist */,
 			);
@@ -160,6 +183,8 @@
 			children = (
 				BA6BF9782AF99BD10046D10E /* Progressbar.swift */,
 				BA6BF97E2AFAC9870046D10E /* TimeFood.swift */,
+				FD6F66622AFC2AEF00798D74 /* ItemLoja.swift */,
+				FD6F66642AFC2B3600798D74 /* ListaItensLoja.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -169,8 +194,21 @@
 			children = (
 				8181ABE52AF2C4BB00453922 /* ContentView.swift */,
 				BA6BF9752AF991C30046D10E /* Kitchen.swift */,
+				FD6F65E22AFAB5B300798D74 /* Bedroom.swift */,
+				FD6F66542AFBFFE200798D74 /* LojaView.swift */,
+				FD6F66602AFC0FB500798D74 /* InventarioUsuarioView.swift */,
+				FD6F66662AFD0EFE00798D74 /* TabBarView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FD6F665A2AFC0AB300798D74 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				FD6F665B2AFC0B0600798D74 /* DataModel.xcdatamodeld */,
+				FD6F665E2AFC0B8100798D74 /* AcessorioViewModel.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,11 +312,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6F66552AFBFFE200798D74 /* LojaView.swift in Sources */,
+				FD6F65E32AFAB5B300798D74 /* Bedroom.swift in Sources */,
+				FD6F66672AFD0EFE00798D74 /* TabBarView.swift in Sources */,
 				8181ABE62AF2C4BB00453922 /* ContentView.swift in Sources */,
 				BA6BF97F2AFAC9870046D10E /* TimeFood.swift in Sources */,
+				FD6F66692AFD27FF00798D74 /* BedroomWidgetView.swift in Sources */,
+				FD6F66612AFC0FB500798D74 /* InventarioUsuarioView.swift in Sources */,
+				FD6F665D2AFC0B0600798D74 /* DataModel.xcdatamodeld in Sources */,
 				BA6BF9762AF991C30046D10E /* Kitchen.swift in Sources */,
 				BA6BF9792AF99BD10046D10E /* Progressbar.swift in Sources */,
+				FD6F66632AFC2AEF00798D74 /* ItemLoja.swift in Sources */,
 				8181ABE42AF2C4BB00453922 /* WidgetDemoApp.swift in Sources */,
+				FD6F665F2AFC0B8100798D74 /* AcessorioViewModel.swift in Sources */,
+				FD6F66652AFC2B3600798D74 /* ListaItensLoja.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6F666E2AFD615400798D74 /* TrocarEstadoAppIntent.swift in Sources */,
 				BA6BF97D2AFAAD020046D10E /* Progressbar.swift in Sources */,
 				8181AC0D2AF2D22100453922 /* DataService.swift in Sources */,
 				8181AC0F2AF2EF1900453922 /* LogEntryAppIntent.swift in Sources */,
@@ -435,7 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = 3XAB48JYXN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -466,7 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = 3XAB48JYXN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -574,6 +622,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FD6F665B2AFC0B0600798D74 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FD6F665C2AFC0B0600798D74 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = FD6F665C2AFC0B0600798D74 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8181ABD82AF2C4BB00453922 /* Project object */;
 }

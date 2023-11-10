@@ -2,13 +2,15 @@ import SwiftUI
 import WidgetKit
 // Barra de fome
 struct ProgressBar: View {
-    @Binding var value: Int
+    @Binding var value: Double
     @AppStorage("hunger", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var hunger: Int = 0
     
     // Valores relacionados ao passar do tempo
-    var attRate: Int = 10
-    var interval: Double = 3
-    
+
+    var attRate:  Double = 0.1
+    var interval: Double = 10
+    var frase : String = ""
+    var isTimeActivated: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -20,7 +22,18 @@ struct ProgressBar: View {
                     .frame(width: max(min(CGFloat(value) * geometry.size.width / 100, geometry.size.width), 0), height: geometry.size.height)
                     .foregroundColor(Color(UIColor.systemBlue))
                     .animation(.linear(duration: 0.5), value: value)
-                
+
+                HStack {
+                    Spacer()
+                    if frase == "energia" {
+                        Text(String(format: "%.0f", value) + "% \(frase)")
+                    } else {
+                        Text(String(format: "%.0f", value * 100) + "% \(frase)")
+                    }
+                    
+                }
+                .padding(.horizontal)
+           
             }.cornerRadius(45.0)
         }
     }

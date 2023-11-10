@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="22G91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Acessorio" representedClassName="Acessorio" syncable="YES" codeGenerationType="class">
+        <attribute name="idAcessorio" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imagem" optional="YES" attributeType="Binary"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="preco" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+</model>

@@ -40,11 +40,14 @@ struct Kitchen: View {
                     .padding(.horizontal)
             )
             .padding()
+
             Spacer()
             Image("Buddy")
                 .resizable()
-                .scaledToFit()
                 .frame(width: 200, height: 200)
+            
+            Spacer()
+
             Button {
                 // Aumentando a barra de fome
                 if hunger < 100 {
@@ -53,6 +56,7 @@ struct Kitchen: View {
                 }
                 //Manually reload the widget
                 WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
+
             } label: {
                 RoundedRectangle(cornerRadius: 25)
                     .frame(height: 50)
@@ -72,7 +76,6 @@ struct Kitchen: View {
                         }
                     )
             }
-            Spacer()
         }
         .onAppear() {
             value = hunger
@@ -109,5 +112,3 @@ struct Kitchen: View {
 #Preview {
     Kitchen()
 }
-
-

@@ -32,8 +32,16 @@
 		FD6F66632AFC2AEF00798D74 /* ItemLoja.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66622AFC2AEF00798D74 /* ItemLoja.swift */; };
 		FD6F66652AFC2B3600798D74 /* ListaItensLoja.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66642AFC2B3600798D74 /* ListaItensLoja.swift */; };
 		FD6F66672AFD0EFE00798D74 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66662AFD0EFE00798D74 /* TabBarView.swift */; };
-		FD6F66692AFD27FF00798D74 /* BedroomWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */; };
-		FD6F666E2AFD615400798D74 /* TrocarEstadoAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */; };
+		FD6F66742AFEAF6700798D74 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8181ABF72AF2CA6000453922 /* WidgetKit.framework */; };
+		FD6F66752AFEAF6700798D74 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8181ABF92AF2CA6000453922 /* SwiftUI.framework */; };
+		FD6F66782AFEAF6700798D74 /* BedroomWidgetExtensionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66772AFEAF6700798D74 /* BedroomWidgetExtensionBundle.swift */; };
+		FD6F667A2AFEAF6700798D74 /* BedroomWidgetExtensionLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66792AFEAF6700798D74 /* BedroomWidgetExtensionLiveActivity.swift */; };
+		FD6F667C2AFEAF6700798D74 /* BedroomWidgetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F667B2AFEAF6700798D74 /* BedroomWidgetExtension.swift */; };
+		FD6F667E2AFEAF6800798D74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6F667D2AFEAF6800798D74 /* Assets.xcassets */; };
+		FD6F66822AFEAF6800798D74 /* BedroomWidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FD6F66732AFEAF6700798D74 /* BedroomWidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FD6F66882AFEAFDD00798D74 /* WidgetBedroomExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66862AFEAFB100798D74 /* WidgetBedroomExtensionView.swift */; };
+		FD6F66892AFEAFEA00798D74 /* TrocarEstadoAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */; };
+		FD6F668D2AFEB12800798D74 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F668A2AFEAFFC00798D74 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +51,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8181ABF42AF2CA6000453922;
 			remoteInfo = WidgetExtensionExtension;
+		};
+		FD6F66802AFEAF6800798D74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8181ABD82AF2C4BB00453922 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD6F66722AFEAF6700798D74;
+			remoteInfo = BedroomWidgetExtensionExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -54,6 +69,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				8181AC052AF2CA6100453922 /* WidgetExtensionExtension.appex in Embed Foundation Extensions */,
+				FD6F66822AFEAF6800798D74 /* BedroomWidgetExtensionExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,8 +104,16 @@
 		FD6F66622AFC2AEF00798D74 /* ItemLoja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLoja.swift; sourceTree = "<group>"; };
 		FD6F66642AFC2B3600798D74 /* ListaItensLoja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaItensLoja.swift; sourceTree = "<group>"; };
 		FD6F66662AFD0EFE00798D74 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-		FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomWidgetView.swift; sourceTree = "<group>"; };
 		FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrocarEstadoAppIntent.swift; sourceTree = "<group>"; };
+		FD6F66732AFEAF6700798D74 /* BedroomWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BedroomWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6F66772AFEAF6700798D74 /* BedroomWidgetExtensionBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomWidgetExtensionBundle.swift; sourceTree = "<group>"; };
+		FD6F66792AFEAF6700798D74 /* BedroomWidgetExtensionLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomWidgetExtensionLiveActivity.swift; sourceTree = "<group>"; };
+		FD6F667B2AFEAF6700798D74 /* BedroomWidgetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomWidgetExtension.swift; sourceTree = "<group>"; };
+		FD6F667D2AFEAF6800798D74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD6F667F2AFEAF6800798D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD6F66862AFEAFB100798D74 /* WidgetBedroomExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBedroomExtensionView.swift; sourceTree = "<group>"; };
+		FD6F668A2AFEAFFC00798D74 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		FD6F668C2AFEB06E00798D74 /* BedroomWidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BedroomWidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,15 +133,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD6F66702AFEAF6700798D74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6F66752AFEAF6700798D74 /* SwiftUI.framework in Frameworks */,
+				FD6F66742AFEAF6700798D74 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		8181ABD72AF2C4BB00453922 = {
 			isa = PBXGroup;
 			children = (
+				FD6F668C2AFEB06E00798D74 /* BedroomWidgetExtensionExtension.entitlements */,
 				8181AC0B2AF2D10A00453922 /* WidgetExtensionExtension.entitlements */,
 				8181ABE22AF2C4BB00453922 /* WidgetDemo */,
 				8181ABFB2AF2CA6000453922 /* WidgetExtension */,
+				FD6F66762AFEAF6700798D74 /* BedroomWidgetExtension */,
 				8181ABF62AF2CA6000453922 /* Frameworks */,
 				8181ABE12AF2C4BB00453922 /* Products */,
 			);
@@ -128,6 +163,7 @@
 			children = (
 				8181ABE02AF2C4BB00453922 /* WidgetDemo.app */,
 				8181ABF52AF2CA6000453922 /* WidgetExtensionExtension.appex */,
+				FD6F66732AFEAF6700798D74 /* BedroomWidgetExtensionExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,10 +204,8 @@
 			children = (
 				8181ABFC2AF2CA6000453922 /* WidgetExtensionBundle.swift */,
 				8181ABFE2AF2CA6000453922 /* WidgetExtension.swift */,
-				FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */,
 				8181AC0C2AF2D22100453922 /* DataService.swift */,
 				8181AC0E2AF2EF1900453922 /* LogEntryAppIntent.swift */,
-				FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */,
 				8181AC002AF2CA6100453922 /* Assets.xcassets */,
 				8181AC022AF2CA6100453922 /* Info.plist */,
 			);
@@ -211,6 +245,21 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		FD6F66762AFEAF6700798D74 /* BedroomWidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				FD6F668A2AFEAFFC00798D74 /* DataService.swift */,
+				FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */,
+				FD6F66772AFEAF6700798D74 /* BedroomWidgetExtensionBundle.swift */,
+				FD6F66792AFEAF6700798D74 /* BedroomWidgetExtensionLiveActivity.swift */,
+				FD6F667B2AFEAF6700798D74 /* BedroomWidgetExtension.swift */,
+				FD6F667D2AFEAF6800798D74 /* Assets.xcassets */,
+				FD6F667F2AFEAF6800798D74 /* Info.plist */,
+				FD6F66862AFEAFB100798D74 /* WidgetBedroomExtensionView.swift */,
+			);
+			path = BedroomWidgetExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +276,7 @@
 			);
 			dependencies = (
 				8181AC042AF2CA6100453922 /* PBXTargetDependency */,
+				FD6F66812AFEAF6800798D74 /* PBXTargetDependency */,
 			);
 			name = WidgetDemo;
 			productName = WidgetDemo;
@@ -250,6 +300,23 @@
 			productReference = 8181ABF52AF2CA6000453922 /* WidgetExtensionExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		FD6F66722AFEAF6700798D74 /* BedroomWidgetExtensionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD6F66852AFEAF6800798D74 /* Build configuration list for PBXNativeTarget "BedroomWidgetExtensionExtension" */;
+			buildPhases = (
+				FD6F666F2AFEAF6700798D74 /* Sources */,
+				FD6F66702AFEAF6700798D74 /* Frameworks */,
+				FD6F66712AFEAF6700798D74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BedroomWidgetExtensionExtension;
+			productName = BedroomWidgetExtensionExtension;
+			productReference = FD6F66732AFEAF6700798D74 /* BedroomWidgetExtensionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -265,6 +332,9 @@
 					};
 					8181ABF42AF2CA6000453922 = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					FD6F66722AFEAF6700798D74 = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -283,6 +353,7 @@
 			targets = (
 				8181ABDF2AF2C4BB00453922 /* WidgetDemo */,
 				8181ABF42AF2CA6000453922 /* WidgetExtensionExtension */,
+				FD6F66722AFEAF6700798D74 /* BedroomWidgetExtensionExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -305,6 +376,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD6F66712AFEAF6700798D74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6F667E2AFEAF6800798D74 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -317,7 +396,6 @@
 				FD6F66672AFD0EFE00798D74 /* TabBarView.swift in Sources */,
 				8181ABE62AF2C4BB00453922 /* ContentView.swift in Sources */,
 				BA6BF97F2AFAC9870046D10E /* TimeFood.swift in Sources */,
-				FD6F66692AFD27FF00798D74 /* BedroomWidgetView.swift in Sources */,
 				FD6F66612AFC0FB500798D74 /* InventarioUsuarioView.swift in Sources */,
 				FD6F665D2AFC0B0600798D74 /* DataModel.xcdatamodeld in Sources */,
 				BA6BF9762AF991C30046D10E /* Kitchen.swift in Sources */,
@@ -333,13 +411,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD6F666E2AFD615400798D74 /* TrocarEstadoAppIntent.swift in Sources */,
 				BA6BF97D2AFAAD020046D10E /* Progressbar.swift in Sources */,
 				8181AC0D2AF2D22100453922 /* DataService.swift in Sources */,
 				8181AC0F2AF2EF1900453922 /* LogEntryAppIntent.swift in Sources */,
 				8181ABFD2AF2CA6000453922 /* WidgetExtensionBundle.swift in Sources */,
 				BA6BF9802AFAC98B0046D10E /* TimeFood.swift in Sources */,
 				8181ABFF2AF2CA6000453922 /* WidgetExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD6F666F2AFEAF6700798D74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6F66782AFEAF6700798D74 /* BedroomWidgetExtensionBundle.swift in Sources */,
+				FD6F66892AFEAFEA00798D74 /* TrocarEstadoAppIntent.swift in Sources */,
+				FD6F667C2AFEAF6700798D74 /* BedroomWidgetExtension.swift in Sources */,
+				FD6F668D2AFEB12800798D74 /* DataService.swift in Sources */,
+				FD6F66882AFEAFDD00798D74 /* WidgetBedroomExtensionView.swift in Sources */,
+				FD6F667A2AFEAF6700798D74 /* BedroomWidgetExtensionLiveActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +440,11 @@
 			isa = PBXTargetDependency;
 			target = 8181ABF42AF2CA6000453922 /* WidgetExtensionExtension */;
 			targetProxy = 8181AC032AF2CA6100453922 /* PBXContainerItemProxy */;
+		};
+		FD6F66812AFEAF6800798D74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD6F66722AFEAF6700798D74 /* BedroomWidgetExtensionExtension */;
+			targetProxy = FD6F66802AFEAF6800798D74 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -591,6 +686,62 @@
 			};
 			name = Release;
 		};
+		FD6F66832AFEAF6800798D74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = BedroomWidgetExtensionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3XAB48JYXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BedroomWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BedroomWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Luca.WidgetDemo.BedroomWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD6F66842AFEAF6800798D74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = BedroomWidgetExtensionExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3XAB48JYXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BedroomWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BedroomWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Luca.WidgetDemo.BedroomWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -617,6 +768,15 @@
 			buildConfigurations = (
 				8181AC072AF2CA6100453922 /* Debug */,
 				8181AC082AF2CA6100453922 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD6F66852AFEAF6800798D74 /* Build configuration list for PBXNativeTarget "BedroomWidgetExtensionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD6F66832AFEAF6800798D74 /* Debug */,
+				FD6F66842AFEAF6800798D74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

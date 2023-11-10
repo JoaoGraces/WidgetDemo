@@ -22,8 +22,15 @@ struct ListaItensLoja : View {
                     Button {
                         if ehLoja {
                             if moedas >= produto.preco {
-                                self.moedas -= produto.preco
-                                AcessorioViewModel().comprarAcessorio(produto: produto, contexto: moc)
+                                if AcessorioViewModel().retornarAcessoriosComprados(contexto: moc).contains(where: { elemento in
+                                    elemento.nome == produto.nome
+                                }) {
+                                    print("NÃO DA PARA COMPRAR UM BAGULHO QUE CE JA TEM FIO")
+                                } else {
+                                    self.moedas -= produto.preco
+                                    AcessorioViewModel().comprarAcessorio(produto: produto, contexto: moc)
+                                }
+                                
                             } else {
                                 alertaApresentado = true
                             }

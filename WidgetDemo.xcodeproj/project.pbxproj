@@ -34,6 +34,7 @@
 		FD6F66672AFD0EFE00798D74 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66662AFD0EFE00798D74 /* TabBarView.swift */; };
 		FD6F66692AFD27FF00798D74 /* BedroomWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */; };
 		FD6F666E2AFD615400798D74 /* TrocarEstadoAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */; };
+		FD6F67482B02B59700798D74 /* ShortcutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F67462B02B4E800798D74 /* ShortcutProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		FD6F66662AFD0EFE00798D74 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomWidgetView.swift; sourceTree = "<group>"; };
 		FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrocarEstadoAppIntent.swift; sourceTree = "<group>"; };
+		FD6F67462B02B4E800798D74 /* ShortcutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */,
 				8181AC002AF2CA6100453922 /* Assets.xcassets */,
 				8181AC022AF2CA6100453922 /* Info.plist */,
+				FD6F67462B02B4E800798D74 /* ShortcutProvider.swift */,
 			);
 			path = WidgetExtension;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6F67482B02B59700798D74 /* ShortcutProvider.swift in Sources */,
 				FD6F666E2AFD615400798D74 /* TrocarEstadoAppIntent.swift in Sources */,
 				BA6BF97D2AFAAD020046D10E /* Progressbar.swift in Sources */,
 				8181AC0D2AF2D22100453922 /* DataService.swift in Sources */,
@@ -483,7 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3XAB48JYXN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -514,7 +518,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3XAB48JYXN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

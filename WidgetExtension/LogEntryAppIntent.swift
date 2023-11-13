@@ -14,11 +14,11 @@ struct LogEntryAppIntent: AppIntent {
     
     static var description = IntentDescription("Adds 1 to your streak.")
     // Intent para aumentar a barra / alimentar o buddy
-    func perform() async throws -> some IntentResult & ReturnsValue<Int> {
+    func perform() async throws -> some ProvidesDialog & ShowsSnippetView {
         
         let data = DataService()
         data.log()
         
-        return .result(value: data.progress())
+        return .result(dialog: "Seu Buddy está \(data.progress())% alimentado")
     }
 }

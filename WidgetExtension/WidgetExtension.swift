@@ -15,15 +15,15 @@ struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), streak: Int(data.progress()))
     }
-
+    
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry(date: Date(), streak: Int(data.progress()))
         completion(entry)
     }
-
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-
+        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
@@ -31,7 +31,7 @@ struct Provider: TimelineProvider {
             let entry = SimpleEntry(date: entryDate, streak: data.progress())
             entries.append(entry)
         }
-
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -47,7 +47,7 @@ struct WidgetExtensionEntryView : View {
     
     let data = DataService()
     @AppStorage("hunger", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var hunger: Int = 0
-
+    
     var body: some View {
         VStack{
             HStack{
@@ -64,7 +64,7 @@ struct WidgetExtensionEntryView : View {
                         
                     }.cornerRadius(45.0)
                 }
-                    .frame(height: 20)
+                .frame(height: 20)
                 Button(intent: LogEntryAppIntent()){
                     Image(systemName: "fork.knife.circle")
                         .resizable()
@@ -73,7 +73,7 @@ struct WidgetExtensionEntryView : View {
                         .foregroundStyle(.green)
                 }
             }
-           Spacer()
+            Spacer()
             Image("Buddy")
                 .resizable()
                 .scaledToFit()
@@ -83,28 +83,89 @@ struct WidgetExtensionEntryView : View {
 
 struct WidgetExtension: Widget {
     let kind: String = "WidgetExtension"
-
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgedBedroomExtensionView(entry: entry)
                 .containerBackground(Color("WidgetBG").gradient, for: .widget)
             
-            /*
-            if #available(iOS 17.0, *) {
-                WidgetExtensionEntryView(entry: entry)
-                    .containerBackground(Color("WidgetBG").gradient, for: .widget)
-            } else {
-                WidgetExtensionEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
-             */
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
         .supportedFamilies([.systemMedium])
+    }
+}
+
+struct LockScreenCircularWidget: Widget {
+    let kind: String = "WidgetExtension"
     
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            CircularWidwegLockscreenView(entry: entry)
+                .containerBackground(Color("WidgetBG").gradient, for: .widget)
             
+        }
+        .supportedFamilies([.accessoryCircular])
+        .configurationDisplayName("My Widget")
+        .description("This is an example widget.")
+    }
+}
+
+//struct TodasWidgetViews: View {
+//    @Environment(\.widgetFamily) var widgetFamily
+//    
+//    var entry: SimpleEntry
+//    let data = DataService()
+//    
+//    var body: some View {
+//        switch widgetFamily {
+//        case .systemMedium:
+//            WidgedBedroomExtensionView(entry: entry)
+//            
+//        case .accessoryInline:
+//            TextoWidget(texto: "")
+//            
+//        case .accessoryCircular:
+//            CircularWidwegLockscreenView(entry: entry)
+//            
+//        default:
+//            Text("Not Implemented")
+//        }
+//    }
+//}
+
+struct CircularWidwegLockscreenView: View {
+    var entry : Provider.Entry
+    
+    @AppStorage("Energia", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var nivelEnergia : Double = 100
+    @AppStorage("EstaDormindo", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var estado : String = "acordado"
+    
+    var body: some View {
+        
+        ZStack(alignment: .center){
+            Image("Buddy")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 60, height: 60)
+            VStack {
+                Spacer()
+                
+                HStack {
+                    Spacer()
+                        .frame(width: 10)
+                    Text("\(Int(nivelEnergia))%")
+                        .font(.system(size: 15))
+                        .fontWeight(.black)
+                        .background(RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.black.opacity(0.5))
+                        )
+                }
+            }
+            
+        }//fim do Zstack
+        
+        
+        
     }
 }
 
@@ -211,9 +272,12 @@ struct ImagemWidget : View {
     }
 }
 
-#Preview(as: .systemSmall) {
-    WidgetExtension()
+
+
+
+#Preview(as: .accessoryCircular) {
+    LockScreenCircularWidget()
 } timeline: {
-    SimpleEntry(date: .now, streak: 1)
-    SimpleEntry(date: .now, streak: 4)
+    SimpleEntry(date: .now, streak: 10)
+    SimpleEntry(date: .now, streak: 90)
 }

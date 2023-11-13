@@ -19,6 +19,10 @@ struct TabBarView: View {
                 Bedroom().tabItem {
                     Image(systemName: "bed.double.fill")
                 }
+                
+                Armario().tabItem {
+                    Image(systemName: "hanger")
+                }
             }
         }
         

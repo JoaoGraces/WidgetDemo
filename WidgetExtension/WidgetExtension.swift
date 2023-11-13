@@ -187,6 +187,87 @@ struct WidgedBedroomExtensionView : View {
     }
 }
 
+struct WidgetArmarioExtensionEntryView : View {
+    var entry: Provider.Entry
+    
+    let data = DataService()
+    @AppStorage("clothes", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var clothes: String = "Buddy"
+
+    var body: some View {
+        HStack{
+            
+            Image(clothes)
+                .resizable()
+                .scaledToFit()
+            
+            Spacer()
+            
+            VStack{
+                
+                HStack{
+                    Button(intent: LogEntryArmario1AppIntent()){
+                        Image(systemName: "fork.knife.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.green)
+                    }
+                    Button(intent: LogEntryArmario2AppIntent()){
+                        Image(systemName: "fork.knife.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.green)
+                    }
+                }
+                HStack{
+                    Button(intent: LogEntryArmario3AppIntent()){
+                        Image(systemName: "fork.knife.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.green)
+                    }
+                    Button(intent: LogEntryArmario4AppIntent()){
+                        Image(systemName: "fork.knife.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.green)
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct WidgetArmarioExtension: Widget {
+    let kind: String = "WidgetArmarioExtension"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            WidgetArmarioExtensionEntryView(entry: entry)
+                .containerBackground(Color("WidgetBG").gradient, for: .widget)
+            
+            /*
+            if #available(iOS 17.0, *) {
+                WidgetExtensionEntryView(entry: entry)
+                    .containerBackground(Color("WidgetBG").gradient, for: .widget)
+            } else {
+                WidgetExtensionEntryView(entry: entry)
+                    .padding()
+                    .background()
+            }
+             */
+        }
+        .configurationDisplayName("My Widget")
+        .description("This is an example widget.")
+        .supportedFamilies([.systemMedium])
+    
+            
+    }
+}
+
 struct TextoWidget : View {
     var texto : String
     

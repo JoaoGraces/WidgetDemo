@@ -22,3 +22,91 @@ struct LogEntryAppIntent: AppIntent {
         return .result(value: data.progress())
     }
 }
+
+struct LogEntryArmario1AppIntent: AppIntent {
+
+    
+    var roupa: String = "Buddy"
+
+    init() {
+        
+    }
+    
+    static var title: LocalizedStringResource = "Change Buddy's clothes."
+    
+    static var description = IntentDescription("Changes Buddy's clothes according to what you pick.")
+    // Intent para aumentar a barra / alimentar o buddy
+    func perform() async throws -> some IntentResult & ReturnsValue<Int> {
+        
+        let data = DataService()
+        data.mudarRoupa(roupa: roupa)
+        
+        return .result(value: data.progress())
+    }
+}
+
+struct LogEntryArmario2AppIntent: AppIntent {
+
+    
+    var roupa: String = "chapeuBuddy"
+
+    init() {
+        
+    }
+    
+    static var title: LocalizedStringResource = "Change Buddy's clothes."
+    
+    static var description = IntentDescription("Changes Buddy's clothes according to what you pick.")
+    // Intent para aumentar a barra / alimentar o buddy
+    func perform() async throws -> some IntentResult & ReturnsValue<Int> {
+        
+        let data = DataService()
+        data.mudarRoupa(roupa: roupa)
+        
+        return .result(value: data.progress())
+    }
+}
+
+struct LogEntryArmario3AppIntent: AppIntent {
+
+    
+    var roupa: String = "Buddy"
+
+    init() {
+        
+    }
+    
+    static var title: LocalizedStringResource = "Change Buddy's clothes."
+    
+    static var description = IntentDescription("Changes Buddy's clothes according to what you pick.")
+    // Intent para aumentar a barra / alimentar o buddy
+    func perform() async throws -> some IntentResult & ReturnsValue<Int> {
+        
+        let data = DataService()
+        data.mudarRoupa(roupa: roupa)
+        
+        return .result(value: data.progress())
+    }
+}
+
+struct LogEntryArmario4AppIntent: AppIntent {
+
+    
+    var roupa: String = "BuddyDormindo"
+
+    init() {
+        
+    }
+    
+    static var title: LocalizedStringResource = "Change Buddy's clothes."
+    
+    static var description = IntentDescription("Changes Buddy's clothes according to what you pick.")
+    // Intent para aumentar a barra / alimentar o buddy
+    func perform() async throws -> some IntentResult & ReturnsValue<Int> {
+        
+        let data = DataService()
+        data.mudarRoupa(roupa: roupa)
+        
+        return .result(value: data.progress())
+    }
+}

@@ -19,6 +19,8 @@
 		8181AC052AF2CA6100453922 /* WidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8181ABF52AF2CA6000453922 /* WidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8181AC0D2AF2D22100453922 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181AC0C2AF2D22100453922 /* DataService.swift */; };
 		8181AC0F2AF2EF1900453922 /* LogEntryAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181AC0E2AF2EF1900453922 /* LogEntryAppIntent.swift */; };
+		8181AC3C2B02908E00453922 /* WidgetArmarioExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181AC3B2B02908E00453922 /* WidgetArmarioExtension.swift */; };
+		8181AC3E2B02A8EB00453922 /* Armario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181AC3D2B02A8EB00453922 /* Armario.swift */; };
 		BA6BF9762AF991C30046D10E /* Kitchen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF9752AF991C30046D10E /* Kitchen.swift */; };
 		BA6BF9792AF99BD10046D10E /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF9782AF99BD10046D10E /* Progressbar.swift */; };
 		BA6BF97D2AFAAD020046D10E /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF9782AF99BD10046D10E /* Progressbar.swift */; };
@@ -77,6 +79,8 @@
 		8181AC0B2AF2D10A00453922 /* WidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
 		8181AC0C2AF2D22100453922 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8181AC0E2AF2EF1900453922 /* LogEntryAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryAppIntent.swift; sourceTree = "<group>"; };
+		8181AC3B2B02908E00453922 /* WidgetArmarioExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetArmarioExtension.swift; sourceTree = "<group>"; };
+		8181AC3D2B02A8EB00453922 /* Armario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armario.swift; sourceTree = "<group>"; };
 		BA6BF9752AF991C30046D10E /* Kitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen.swift; sourceTree = "<group>"; };
 		BA6BF9782AF99BD10046D10E /* Progressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressbar.swift; sourceTree = "<group>"; };
 		BA6BF97E2AFAC9870046D10E /* TimeFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFood.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			children = (
 				8181ABFC2AF2CA6000453922 /* WidgetExtensionBundle.swift */,
 				8181ABFE2AF2CA6000453922 /* WidgetExtension.swift */,
+				8181AC3B2B02908E00453922 /* WidgetArmarioExtension.swift */,
 				FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */,
 				8181AC0C2AF2D22100453922 /* DataService.swift */,
 				8181AC0E2AF2EF1900453922 /* LogEntryAppIntent.swift */,
@@ -197,6 +202,7 @@
 				FD6F65E22AFAB5B300798D74 /* Bedroom.swift */,
 				FD6F66542AFBFFE200798D74 /* LojaView.swift */,
 				FD6F66602AFC0FB500798D74 /* InventarioUsuarioView.swift */,
+				8181AC3D2B02A8EB00453922 /* Armario.swift */,
 				FD6F66662AFD0EFE00798D74 /* TabBarView.swift */,
 			);
 			path = Views;
@@ -318,6 +324,7 @@
 				8181ABE62AF2C4BB00453922 /* ContentView.swift in Sources */,
 				BA6BF97F2AFAC9870046D10E /* TimeFood.swift in Sources */,
 				FD6F66692AFD27FF00798D74 /* BedroomWidgetView.swift in Sources */,
+				8181AC3E2B02A8EB00453922 /* Armario.swift in Sources */,
 				FD6F66612AFC0FB500798D74 /* InventarioUsuarioView.swift in Sources */,
 				FD6F665D2AFC0B0600798D74 /* DataModel.xcdatamodeld in Sources */,
 				BA6BF9762AF991C30046D10E /* Kitchen.swift in Sources */,
@@ -336,6 +343,7 @@
 				FD6F666E2AFD615400798D74 /* TrocarEstadoAppIntent.swift in Sources */,
 				BA6BF97D2AFAAD020046D10E /* Progressbar.swift in Sources */,
 				8181AC0D2AF2D22100453922 /* DataService.swift in Sources */,
+				8181AC3C2B02908E00453922 /* WidgetArmarioExtension.swift in Sources */,
 				8181AC0F2AF2EF1900453922 /* LogEntryAppIntent.swift in Sources */,
 				8181ABFD2AF2CA6000453922 /* WidgetExtensionBundle.swift in Sources */,
 				BA6BF9802AFAC98B0046D10E /* TimeFood.swift in Sources */,

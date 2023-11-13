@@ -42,10 +42,20 @@ struct DataService {
     
     func mudarEstado () {
         if estado == "dormindo" {
-            estado = "acordado"
+            acordarBuddy()
         } else {
-            estado = "dormindo"
+            dormirBuddy()
         }
+    }
+    
+    func acordarBuddy () {
+        estado = "acordado"
+
+    }
+    
+    func dormirBuddy () {
+        estado = "dormindo"
+
     }
     
     func mostrarEstado () -> String {

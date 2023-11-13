@@ -13,7 +13,8 @@ struct ShortcutProvider : AppShortcutsProvider {
     @AppShortcutsBuilder
     static var appShortcuts: [AppShortcut] {
         return [
-            AppShortcut(intent: TrocarEstadoAppIntent(), phrases: ["Coloque meu monstrinho para dormir no \(.applicationName)"], shortTitle: "dormir", systemImageName: "bed.double"),
+            AppShortcut(intent: DormirAppIntent(), phrases: ["Coloque meu monstrinho para dormir no \(.applicationName)"], shortTitle: "dormir buddy", systemImageName: "powersleep"),
+            AppShortcut(intent: AcordarAppIntent(), phrases: ["Acorde meu monstrinho no \(.applicationName)"], shortTitle: "acordar buddy", systemImageName: "sun.min"),
             AppShortcut(intent: LogEntryAppIntent(), phrases: ["Alimente meu monstrinho no \(.applicationName)"], shortTitle: "alimentar", systemImageName: "carrot")
         
         ]

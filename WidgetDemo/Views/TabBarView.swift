@@ -9,6 +9,8 @@ import SwiftUI
 import WidgetKit
 
 struct TabBarView: View {
+    @StateObject private var vm = CKPushNotificationViewModel()
+
     var body: some View {
         ZStack{
             TabView {
@@ -24,6 +26,10 @@ struct TabBarView: View {
                 Armario().tabItem {
                     Image(systemName: "hanger")
                 }
+                AdicionarItems().tabItem {
+                    Image(systemName: "plus.app")
+                }
+
             }
         }
         

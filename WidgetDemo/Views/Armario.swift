@@ -9,7 +9,9 @@ import SwiftUI
 import WidgetKit
 
 struct Armario: View {
-    
+    @Environment (\.managedObjectContext) var moc
+    let vm = AcessorioViewModel()
+
     @AppStorage("clothes", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var clothes: String = "Buddy"
 
     var body: some View {
@@ -17,47 +19,50 @@ struct Armario: View {
             Image(clothes)
                 .resizable()
                 .scaledToFit()
+                .frame(height: 300)
             
-            HStack{
-                Button{
-                    clothes = "Buddy"
-                    WidgetCenter.shared.reloadTimelines(ofKind: "WidgetArmarioExtension")
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
+                
+                ForEach(vm.retornarAcessoriosComprados(contexto: moc)) { item in
+                    AcessorioView(clothes: $clothes, nomeIconeAcessorio: item.nome, nomeImagemBuddy: "\(item.nome)Buddy")
                 }
-                label: {
-                    Image(systemName: "fork.knife.circle")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                }
-                Button{
-                    clothes = "chapeuBuddy"
-                    WidgetCenter.shared.reloadTimelines(ofKind: "WidgetArmarioExtension")
-                }
-                label: {
-                    Image(systemName: "fork.knife.circle")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                }
-            }.padding(.horizontal)
-            HStack{
-                Button{
-                    clothes = "Buddy"
-                    WidgetCenter.shared.reloadTimelines(ofKind: "WidgetArmarioExtension")
-                }
-            label: {
-                Image(systemName: "fork.knife.circle")
-                    .resizable()
-                    .frame(width: 100, height: 100)
+            })
+            
+            Button ("Tirar acessórios") {
+                self.clothes = "Buddy"
             }
-                Button{
-                    clothes = "BuddyDormindo"
-                    WidgetCenter.shared.reloadTimelines(ofKind: "WidgetArmarioExtension")
-                }
-            label: {
-                Image(systemName: "fork.knife.circle")
-                    .resizable()
+        }
+    }
+}
+
+struct AcessorioView : View {
+    @Binding var clothes : String
+    
+    var nomeIconeAcessorio : String?
+    var nomeImagemBuddy : String
+    
+    var body: some View {
+        Button{
+            clothes = nomeImagemBuddy
+            WidgetCenter.shared.reloadTimelines(ofKind: "WidgetArmarioExtension")
+        }
+        label: {
+            ZStack{
+                RoundedRectangle(cornerRadius: 20)
                     .frame(width: 100, height: 100)
+                    .foregroundStyle(.blue.gradient.opacity(0.7))
+                if let nomeIconeAcessorio = nomeIconeAcessorio {
+                    Image(nomeIconeAcessorio)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        
+                } else {
+                    Image(systemName: "fork.knife")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                }
             }
-            }.padding(.horizontal)
         }
     }
 }

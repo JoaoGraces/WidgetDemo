@@ -30,7 +30,7 @@ struct LojaView: View {
                     .foregroundStyle(.yellow)
             }.padding(.horizontal)
             VStack{
-                ListaItensLoja(listaItensLoja: [Produto(id: UUID(), nome: "Lápis", preco: 10, imagem: UIImage(systemName: "pencil")!), Produto(id: UUID(), nome: "Chapéu", preco: 100, imagem: UIImage(systemName: "square.and.arrow.up")!), Produto(id: UUID(), nome: "Corinthians", preco: 10, imagem: UIImage(systemName: "doc.fill")!), Produto(id: UUID(), nome: "Sapato", preco: 50, imagem: UIImage(systemName: "pencil")!)], moedas: $moedas, ehLoja: true)
+                ListaItensLoja(listaItensLoja: [Produto(id: UUID(), nome: "pirulito", preco: 10, imagem: UIImage(named: "pirulito")!), Produto(id: UUID(), nome: "chapeu", preco: 100, imagem: UIImage(named: "chapeu")!), Produto(id: UUID(), nome: "cartola", preco: 10, imagem: UIImage(named: "cartola")!), Produto(id: UUID(), nome: "gravata", preco: 50, imagem: UIImage(named: "gravata")!)], moedas: $moedas, ehLoja: true)
                 
                 
                 Spacer()

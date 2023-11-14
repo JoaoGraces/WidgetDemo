@@ -11,6 +11,7 @@ import WidgetKit
 struct Kitchen: View {
     @State var value = 0
     @AppStorage("hunger", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var hunger: Int = 0
+    @AppStorage("clothes", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var clothes : String = ""
     
     var body: some View {
         VStack {
@@ -42,9 +43,10 @@ struct Kitchen: View {
             .padding()
 
             Spacer()
-            Image("Buddy")
+            Image(self.clothes)
                 .resizable()
-                .frame(width: 200, height: 200)
+                .scaledToFit()
+                .frame(height: 300)
             
             Spacer()
 

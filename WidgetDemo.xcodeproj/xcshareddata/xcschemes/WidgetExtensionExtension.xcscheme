@@ -67,15 +67,6 @@
             ReferencedContainer = "container:WidgetDemo.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8181ABDF2AF2C4BB00453922"
-            BuildableName = "WidgetDemo.app"
-            BlueprintName = "WidgetDemo"
-            ReferencedContainer = "container:WidgetDemo.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"

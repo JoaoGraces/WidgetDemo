@@ -86,53 +86,52 @@ struct WidgetExtension: Widget {
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            WidgedBedroomExtensionView(entry: entry)
+            TodosWidgetViews(entry: entry)
                 .containerBackground(Color("WidgetBG").gradient, for: .widget)
             
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemMedium])
+        .supportedFamilies([.systemMedium, .accessoryCircular, .accessoryInline])
     }
 }
 
-struct LockScreenCircularWidget: Widget {
-    let kind: String = "WidgetExtension"
-    
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            CircularWidwegLockscreenView(entry: entry)
-                .containerBackground(Color("WidgetBG").gradient, for: .widget)
-            
-        }
-        .supportedFamilies([.accessoryCircular])
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-    }
-}
-
-//struct TodasWidgetViews: View {
-//    @Environment(\.widgetFamily) var widgetFamily
+//struct LockScreenCircularWidget: Widget {
+//    let kind: String = "WidgetExtension"
 //    
-//    var entry: SimpleEntry
-//    let data = DataService()
-//    
-//    var body: some View {
-//        switch widgetFamily {
-//        case .systemMedium:
-//            WidgedBedroomExtensionView(entry: entry)
-//            
-//        case .accessoryInline:
-//            TextoWidget(texto: "")
-//            
-//        case .accessoryCircular:
+//    var body: some WidgetConfiguration {
+//        StaticConfiguration(kind: kind, provider: Provider()) { entry in
 //            CircularWidwegLockscreenView(entry: entry)
+//                .containerBackground(Color("WidgetBG").gradient, for: .widget)
 //            
-//        default:
-//            Text("Not Implemented")
 //        }
+//        .configurationDisplayName("My Widget")
+//        .description("This is an example widget.")
+//        .supportedFamilies([.accessoryCircular])
 //    }
 //}
+
+struct TodosWidgetViews: View {
+    @Environment(\.widgetFamily) var widgetFamily
+    
+    let entry: SimpleEntry
+    
+    var body: some View {
+        switch widgetFamily {
+        case .systemMedium:
+            WidgedBedroomExtensionView(entry: entry)
+            
+        case .accessoryInline:
+            TextoWidget(texto: "")
+            
+        case .accessoryCircular:
+            CircularWidwegLockscreenView(entry: entry)
+            
+        default:
+            Text("Not Implemented")
+        }
+    }
+}
 
 struct CircularWidwegLockscreenView: View {
     var entry : Provider.Entry
@@ -276,7 +275,8 @@ struct ImagemWidget : View {
 
 
 #Preview(as: .accessoryCircular) {
-    LockScreenCircularWidget()
+//    LockScreenCircularWidget()
+    WidgetExtension()
 } timeline: {
     SimpleEntry(date: .now, streak: 10)
     SimpleEntry(date: .now, streak: 90)

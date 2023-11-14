@@ -12,6 +12,11 @@ struct CKPushNotificationView: View {
     
     var body: some View {
         VStack(spacing: 10){
+            
+            Button("Request CloudKit Permission") {
+                CKUserViewModel().requestPermission()
+            }
+
             Button("Request notification Permission") {
                 vm.requestNotificationPermissions()
             }

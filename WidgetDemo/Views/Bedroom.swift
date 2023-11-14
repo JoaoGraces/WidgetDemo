@@ -137,9 +137,13 @@ struct Bedroom: View {
     
     func aumentarEnergia () {
         nivelEnergia += 1
+        WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
+
     }
     func diminuirEnergia () {
         nivelEnergia -= 1
+        WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
+
     }
    
 }

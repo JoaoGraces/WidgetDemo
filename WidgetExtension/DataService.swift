@@ -13,7 +13,12 @@ struct DataService {
     @AppStorage("hunger", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) private var hunger: Int = 0
     @AppStorage("EstaDormindo", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) private var estado : String = "acordado"
     @AppStorage("energia", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) private var energia : Double = 0
+    @AppStorage("clothes", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var clothes : String = "Buddy"
     
+    
+    func mudarRoupa (roupa: String) {
+        clothes = roupa
+    }
     
     func aumentarEnergia () {
         if energia < 100 {
@@ -37,10 +42,20 @@ struct DataService {
     
     func mudarEstado () {
         if estado == "dormindo" {
-            estado = "acordado"
+            acordarBuddy()
         } else {
-            estado = "dormindo"
+            dormirBuddy()
         }
+    }
+    
+    func acordarBuddy () {
+        estado = "acordado"
+
+    }
+    
+    func dormirBuddy () {
+        estado = "dormindo"
+
     }
     
     func mostrarEstado () -> String {

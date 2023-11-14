@@ -13,5 +13,6 @@ struct WidgetExtensionBundle: WidgetBundle {
     var body: some Widget {
         WidgetExtension()
         WidgetArmarioExtension()
+        WidgetKitchenExtension()
     }
 }

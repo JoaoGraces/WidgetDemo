@@ -43,7 +43,7 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct WidgetExtensionEntryView : View {
-    var entry: Provider.Entry
+    var entry: CozinhaProvider.Entry
     
     let data = DataService()
     @AppStorage("hunger", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var hunger: Int = 0
@@ -81,20 +81,7 @@ struct WidgetExtensionEntryView : View {
     }
 }
 
-struct WidgetExtension: Widget {
-    let kind: String = "WidgetExtension"
-    
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            TodosWidgetViews(entry: entry)
-                .containerBackground(Color("WidgetBG").gradient, for: .widget)
-            
-        }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-        .supportedFamilies([.systemMedium, .accessoryCircular, .accessoryInline])
-    }
-}
+
 
 struct TodosWidgetViews: View {
     @Environment(\.widgetFamily) var widgetFamily
@@ -293,15 +280,13 @@ struct WidgetArmarioExtensionEntryView : View {
     }
 }
 
-struct WidgetArmarioExtension: Widget {
-    let kind: String = "WidgetArmarioExtension"
+
+struct WidgetKitchenExtension : Widget {
+    let kind: String = "WidgetCozinhaExtension"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            WidgetArmarioExtensionEntryView(entry: entry)
-                .containerBackground(Color("WidgetBG").gradient, for: .widget)
+        StaticConfiguration(kind: kind, provider: CozinhaProvider()) { entry in
             
-            /*
             if #available(iOS 17.0, *) {
                 WidgetExtensionEntryView(entry: entry)
                     .containerBackground(Color("WidgetBG").gradient, for: .widget)
@@ -310,13 +295,40 @@ struct WidgetArmarioExtension: Widget {
                     .padding()
                     .background()
             }
-             */
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Widget da cozinha")
+        .description("Acompanhe como está a fome do seu monstrinho e alimente ele sem precisar abrir o app!")
+        .supportedFamilies([.systemSmall])
+    }
+}
+
+struct WidgetArmarioExtension: Widget {
+    let kind: String = "WidgetArmarioExtension"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            WidgetArmarioExtensionEntryView(entry: entry)
+                .containerBackground(Color("WidgetBG").gradient, for: .widget)
+        }
+        
+        .configurationDisplayName("Widget do armário")
+        .description("Coloque acessórios no seu monstrinho e veja como ele está sem precisar abrir o app!")
         .supportedFamilies([.systemMedium])
+    }
+}
+
+struct WidgetExtension: Widget {
+    let kind: String = "WidgetExtension"
     
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            TodosWidgetViews(entry: entry)
+                .containerBackground(Color("WidgetBG").gradient, for: .widget)
             
+        }
+        .configurationDisplayName("Widget do quarto")
+        .description("Acorde o seu monstrinho ou coloque ele para dormir sem precisar abrir o app!")
+        .supportedFamilies([.systemMedium, .accessoryCircular, .accessoryInline])
     }
 }
 

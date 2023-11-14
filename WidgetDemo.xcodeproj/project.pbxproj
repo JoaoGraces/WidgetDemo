@@ -26,6 +26,7 @@
 		BA6BF97D2AFAAD020046D10E /* Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF9782AF99BD10046D10E /* Progressbar.swift */; };
 		BA6BF97F2AFAC9870046D10E /* TimeFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF97E2AFAC9870046D10E /* TimeFood.swift */; };
 		BA6BF9802AFAC98B0046D10E /* TimeFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BF97E2AFAC9870046D10E /* TimeFood.swift */; };
+		FD5BC49D2B040F0C00057D28 /* CozinhaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5BC49C2B040F0C00057D28 /* CozinhaProvider.swift */; };
 		FD6F65E32AFAB5B300798D74 /* Bedroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F65E22AFAB5B300798D74 /* Bedroom.swift */; };
 		FD6F66552AFBFFE200798D74 /* LojaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66542AFBFFE200798D74 /* LojaView.swift */; };
 		FD6F665D2AFC0B0600798D74 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD6F665B2AFC0B0600798D74 /* DataModel.xcdatamodeld */; };
@@ -34,7 +35,6 @@
 		FD6F66632AFC2AEF00798D74 /* ItemLoja.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66622AFC2AEF00798D74 /* ItemLoja.swift */; };
 		FD6F66652AFC2B3600798D74 /* ListaItensLoja.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66642AFC2B3600798D74 /* ListaItensLoja.swift */; };
 		FD6F66672AFD0EFE00798D74 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66662AFD0EFE00798D74 /* TabBarView.swift */; };
-		FD6F66692AFD27FF00798D74 /* BedroomWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */; };
 		FD6F666E2AFD615400798D74 /* TrocarEstadoAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */; };
 		FD6F67482B02B59700798D74 /* ShortcutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F67462B02B4E800798D74 /* ShortcutProvider.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +85,7 @@
 		BA6BF9752AF991C30046D10E /* Kitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen.swift; sourceTree = "<group>"; };
 		BA6BF9782AF99BD10046D10E /* Progressbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressbar.swift; sourceTree = "<group>"; };
 		BA6BF97E2AFAC9870046D10E /* TimeFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFood.swift; sourceTree = "<group>"; };
+		FD5BC49C2B040F0C00057D28 /* CozinhaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CozinhaProvider.swift; sourceTree = "<group>"; };
 		FD6F65E22AFAB5B300798D74 /* Bedroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bedroom.swift; sourceTree = "<group>"; };
 		FD6F66542AFBFFE200798D74 /* LojaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LojaView.swift; sourceTree = "<group>"; };
 		FD6F665C2AFC0B0600798D74 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -93,7 +94,6 @@
 		FD6F66622AFC2AEF00798D74 /* ItemLoja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLoja.swift; sourceTree = "<group>"; };
 		FD6F66642AFC2B3600798D74 /* ListaItensLoja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaItensLoja.swift; sourceTree = "<group>"; };
 		FD6F66662AFD0EFE00798D74 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-		FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomWidgetView.swift; sourceTree = "<group>"; };
 		FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrocarEstadoAppIntent.swift; sourceTree = "<group>"; };
 		FD6F67462B02B4E800798D74 /* ShortcutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,13 +172,13 @@
 		8181ABFB2AF2CA6000453922 /* WidgetExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8181ABFC2AF2CA6000453922 /* WidgetExtensionBundle.swift */,
-				8181ABFE2AF2CA6000453922 /* WidgetExtension.swift */,
 				8181AC3B2B02908E00453922 /* WidgetArmarioExtension.swift */,
-				FD6F66682AFD27FF00798D74 /* BedroomWidgetView.swift */,
+				8181ABFE2AF2CA6000453922 /* WidgetExtension.swift */,
+				8181ABFC2AF2CA6000453922 /* WidgetExtensionBundle.swift */,
 				8181AC0C2AF2D22100453922 /* DataService.swift */,
 				8181AC0E2AF2EF1900453922 /* LogEntryAppIntent.swift */,
 				FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */,
+				FD5BC49C2B040F0C00057D28 /* CozinhaProvider.swift */,
 				8181AC002AF2CA6100453922 /* Assets.xcassets */,
 				8181AC022AF2CA6100453922 /* Info.plist */,
 				FD6F67462B02B4E800798D74 /* ShortcutProvider.swift */,
@@ -326,7 +326,6 @@
 				FD6F66672AFD0EFE00798D74 /* TabBarView.swift in Sources */,
 				8181ABE62AF2C4BB00453922 /* ContentView.swift in Sources */,
 				BA6BF97F2AFAC9870046D10E /* TimeFood.swift in Sources */,
-				FD6F66692AFD27FF00798D74 /* BedroomWidgetView.swift in Sources */,
 				8181AC3E2B02A8EB00453922 /* Armario.swift in Sources */,
 				FD6F66612AFC0FB500798D74 /* InventarioUsuarioView.swift in Sources */,
 				FD6F665D2AFC0B0600798D74 /* DataModel.xcdatamodeld in Sources */,
@@ -350,6 +349,7 @@
 				8181AC3C2B02908E00453922 /* WidgetArmarioExtension.swift in Sources */,
 				8181AC0F2AF2EF1900453922 /* LogEntryAppIntent.swift in Sources */,
 				8181ABFD2AF2CA6000453922 /* WidgetExtensionBundle.swift in Sources */,
+				FD5BC49D2B040F0C00057D28 /* CozinhaProvider.swift in Sources */,
 				BA6BF9802AFAC98B0046D10E /* TimeFood.swift in Sources */,
 				8181ABFF2AF2CA6000453922 /* WidgetExtension.swift in Sources */,
 			);

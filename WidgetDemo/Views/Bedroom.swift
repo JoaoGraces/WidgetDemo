@@ -15,13 +15,12 @@ struct Bedroom: View {
     @State var abriuLoja = false
     @State var abriuInventario = false
     
-    @State var imagem = Image("Buddy")
+    @State var nomeImagem = "Buddy"
     
     
     @AppStorage("Energia", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var nivelEnergia : Double = 100
-    
+    @AppStorage("clothes", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var clothes : String = "Buddy"
     @AppStorage("EstaDormindo", store: UserDefaults(suiteName: "group.Luca.WidgetDemo")) var estado : String = "acordado"
-
     
     var body: some View {
         VStack{
@@ -65,19 +64,20 @@ struct Bedroom: View {
             
             Spacer()
         
-            imagem
+            
+            Image(nomeImagem)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200)
+                .frame(height: 300)
             
             Spacer()
             
             Button {
                 if estado == "acordado" {
-                    imagem = Image("BuddyDormindo")
+                    nomeImagem = "BuddyDormindo"
                     estado = "dormindo"
                 } else {
-                    imagem = Image("Buddy")
+                    nomeImagem = self.clothes
                     estado = "acordado"
                 }
                 WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
@@ -105,7 +105,7 @@ struct Bedroom: View {
             LojaView()
         })
         .onAppear(perform: {
-            self.imagem = estado == "acordado" ? Image("Buddy") : Image("BuddyDormindo")
+            self.nomeImagem = estado == "acordado" ? self.clothes : "BuddyDormindo"
             
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
                 if estado == "acordado" {
@@ -117,22 +117,15 @@ struct Bedroom: View {
                         aumentarEnergia()
                     }
                     
-                    if nivelEnergia == 100 {
+                    if nivelEnergia >= 100 {
                         estado = "acordado"
+                        nomeImagem = self.clothes
                         WidgetCenter.shared.reloadTimelines(ofKind: "WidgetExtension")
                     }
                 }
                 
             }
         })
-    }
-    
-    func retornaImagem () -> Image{
-        if self.estado == "acordadoss" {
-            return Image("Buddy")
-        } else {
-            return Image("BuddyDormindo")
-        }
     }
     
     func aumentarEnergia () {

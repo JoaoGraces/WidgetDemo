@@ -136,19 +136,20 @@ struct CircularWidwegLockscreenView: View {
             Image("Buddy")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 60, height: 60)
+                .frame(width: 120, height: 120)
             VStack {
                 Spacer()
                 
                 HStack {
                     Spacer()
-                        .frame(width: 10)
+                        .frame(width: 8)
                     Text("\(Int(nivelEnergia))%")
-                        .font(.system(size: 15))
+                        .font(.system(size: 12))
                         .fontWeight(.black)
                         .background(RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.black.opacity(0.5))
+                            .fill(Color.black.opacity(0.3))
                         )
+                        .padding(.bottom, 28)
                 }
             }
             

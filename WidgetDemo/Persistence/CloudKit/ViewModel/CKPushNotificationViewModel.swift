@@ -11,6 +11,8 @@ import SwiftUI
 import CloudKit
 
 class CKPushNotificationViewModel: ObservableObject {
+    
+    
     func requestNotificationPermissions(){
         let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: options) { success, error in

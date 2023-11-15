@@ -12,6 +12,7 @@ import SwiftUI
 struct ItemModel: Hashable {
 //    let idAcessorio : UUID
     let name: String
+    let imageURL: URL?
     let record: CKRecord
     let preco: Int
 //    let imageURL: URL?

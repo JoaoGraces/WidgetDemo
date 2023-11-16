@@ -18,7 +18,7 @@ struct AdicionarItems: View {
                 precoTextField
                 addButton
                 list
-                
+                Spacer()
                 CKPushNotificationView()
             }
             .padding()

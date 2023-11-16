@@ -11,22 +11,24 @@ struct CKPushNotificationView: View {
     @StateObject private var vm = CKPushNotificationViewModel()
     
     var body: some View {
-        VStack(spacing: 10){
-            
-            Button("Request CloudKit Permission") {
-                CKUserViewModel().requestPermission()
-            }
+        ScrollView {
+            VStack(spacing: 10){
+                
+                Button("Request CloudKit Permission") {
+                    CKUserViewModel().requestPermission()
+                }
 
-            Button("Request notification Permission") {
-                vm.requestNotificationPermissions()
-            }
-            
-            Button("Subscribe to Notifications") {
-                vm.SubscribeToNotifications()
-            }
-            
-            Button("Unsubscribe to Notifications") {
-                vm.unsubscribeToNotifications()
+                Button("Request notification Permission") {
+                    vm.requestNotificationPermissions()
+                }
+                
+                Button("Subscribe to Notifications") {
+                    vm.SubscribeToNotifications()
+                }
+                
+                Button("Unsubscribe to Notifications") {
+                    vm.unsubscribeToNotifications()
+                }
             }
         }
     }

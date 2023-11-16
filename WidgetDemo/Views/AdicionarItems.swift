@@ -72,7 +72,7 @@ extension AdicionarItems {
                 .foregroundStyle(.white)
                 .frame(height: 55)
                 .frame(maxWidth: .infinity)
-                .background(Color.pink.opacity(0.8))
+                .background(Color.blue.opacity(0.8))
                 .cornerRadius(10.0)
             
         })
@@ -83,7 +83,8 @@ extension AdicionarItems {
             ForEach(vm.items, id: \.self) { item in
                 HStack {
                     Text(item.name)
-                    Text(item.preco.description)
+                    Spacer()
+                    Text("$\(item.preco.description)")
                     
 //                    Text(item.preco)
 //                    if let url = item.imageURL, let data = try? Data(contentsOf: url), let image = UIImage(data: data){

@@ -36,8 +36,8 @@ class CKPushNotificationViewModel: ObservableObject {
         let subscriptionADD = CKQuerySubscription(recordType: "Items", predicate: predicate, subscriptionID: "Item_Added_to_Database", options: .firesOnRecordCreation)
         
         let notificationADD = CKSubscription.NotificationInfo()
-        notificationADD.title = "NEW ITEM ADDED"
-        notificationADD.alertBody = "Open the app to check the New Item"
+        notificationADD.title = "NEW ITEM ADDED ON STORE"
+        notificationADD.alertBody = "Open the app to check the New Item in the Store"
         notificationADD.soundName = "default"
         
         subscriptionADD.notificationInfo = notificationADD

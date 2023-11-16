@@ -101,9 +101,12 @@ extension AdicionarItems {
     }
     
     private var list: some View {
-        List{
+        
             ForEach(vm.items, id: \.self) { item in
                 HStack {
+                    if let url = item.imageURL, let data = try? Data(contentsOf: url), let image = UIImage(data: data){
+                        Image(uiImage: image).resizable().frame(width: 50, height: 50)
+                    }
                     Text(item.name)
                     Text(item.preco.description)
                     
@@ -118,10 +121,7 @@ extension AdicionarItems {
 ////                    vm.updateItem(fruit: fruit)
 //                }
             }
-            .onDelete(perform: vm.deleteItem)
-        }
-        .listStyle(PlainListStyle())
-        .cornerRadius(10)
+            
     }
 }
 

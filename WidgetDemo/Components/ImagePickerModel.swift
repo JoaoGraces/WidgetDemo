@@ -46,4 +46,5 @@ struct ImagePickerModel: UIViewControllerRepresentable {
     func makeCoordinator() -> Coordinator {
         return Coordinator(selectedImage: $selectedImage)
     }
+    
 }

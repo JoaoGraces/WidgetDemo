@@ -20,39 +20,39 @@ class CkCrudViewModel: ObservableObject{
         fetchItem()
     }
     
-    func addButtonPressed(){
+    func addButtonPressed(image: UIImage){
         guard !text.isEmpty else { return }
-        addItem(name: text, preco: precoitem)
+        addItem(name: text, preco: precoitem, image: image)
         
         DispatchQueue.main.async{
             self.fetchItem()
         }
     }
     
-    private func addItem(name: String, preco: Int) {
+    private func addItem(name: String, preco: Int, image:UIImage) {
         let newItem = CKRecord(recordType: "Items")
         newItem["name"] = name
         newItem["preco"] = preco
         
-        //        //guarda Imagem
-        //        guard
-        //            let image = UIImage(named: "docinho"),
-        //            let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("docinho.jpeg"),
-        //            let data = image.jpegData(compressionQuality: 1.0) else {return}
-        //
-        //        do{
-        //            try data.write(to: url)
-        //            let asset = CKAsset(fileURL: url)
-        //            newItem["image"] = asset
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+            print("Erro: Imagem não encontrada \(image)")
+            return
+        }
+        let asset = CKAsset(fileURL: createTemporaryFile(data: imageData))
+        newItem["imagem"] = asset
+
         saveItem(record: newItem)
         DispatchQueue.main.async {
             self.fetchItem()
         }
-        //        } catch let error {
-        //            print(error)
-        //        }
-        //acaba aqui a imagem
         
+    }
+    
+    private func createTemporaryFile(data: Data) -> URL {
+        let temporaryDirectory = FileManager.default.temporaryDirectory
+        let temporaryFileURL = temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try? data.write(to: temporaryFileURL, options: [.atomic])
+        return temporaryFileURL
     }
     
     private func saveItem(record: CKRecord) {
@@ -87,13 +87,17 @@ class CkCrudViewModel: ObservableObject{
             case .success(let record):
                 guard let name = record["name"] as? String else {return}
                 guard let preco = record["preco"] as? Int else {return}
-//                let idAcessorio = record["idAcessorio"] as? UUID
+                guard let imageAsset = record["imagem"] as? CKAsset else {print("erro fetch image")
+                    return}
+                let imageURL = imageAsset.fileURL
+                
+                //                let idAcessorio = record["idAcessorio"] as? UUID
 //                let imageAsset = record["image"] as? CKAsset
 //                let imageURL = imageAsset?.fileURL
                 
                 print(record)
                 
-                returnedItems.append(ItemModel(/*idAcessorio: idAcessorio,*/ name: name, record: record, preco: preco /*, imageURL: imageURL*/))
+                returnedItems.append(ItemModel(/*idAcessorio: idAcessorio,*/ name: name, imageURL: imageURL, record: record, preco: preco /*, imageURL: imageURL*/))
                 //ver os tipos de dados que sao usados(pode usar pra usar na KEy de SortDescriptor)
                 //                record.
                 

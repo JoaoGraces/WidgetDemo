@@ -148,15 +148,6 @@
 			path = CloudKit;
 			sourceTree = "<group>";
 		};
-		4A15AB002B03E6E200115E86 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				FD6F665B2AFC0B0600798D74 /* DataModel.xcdatamodeld */,
-				FD6F665E2AFC0B8100798D74 /* AcessorioViewModel.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		4A15AB032B03E7A400115E86 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,7 +274,8 @@
 		FD6F665A2AFC0AB300798D74 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				4A15AB002B03E6E200115E86 /* CoreData */,
+				FD6F665B2AFC0B0600798D74 /* DataModel.xcdatamodeld */,
+				FD6F665E2AFC0B8100798D74 /* AcessorioViewModel.swift */,
 				4A15AAFF2B03E6D500115E86 /* CloudKit */,
 			);
 			path = Persistence;

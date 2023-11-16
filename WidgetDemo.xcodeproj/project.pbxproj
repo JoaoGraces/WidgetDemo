@@ -172,10 +172,10 @@
 		8181ABFB2AF2CA6000453922 /* WidgetExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8181AC3B2B02908E00453922 /* WidgetArmarioExtension.swift */,
-				8181ABFE2AF2CA6000453922 /* WidgetExtension.swift */,
 				8181ABFC2AF2CA6000453922 /* WidgetExtensionBundle.swift */,
 				8181AC0C2AF2D22100453922 /* DataService.swift */,
+				8181AC3B2B02908E00453922 /* WidgetArmarioExtension.swift */,
+				8181ABFE2AF2CA6000453922 /* WidgetExtension.swift */,
 				8181AC0E2AF2EF1900453922 /* LogEntryAppIntent.swift */,
 				FD6F666C2AFD614000798D74 /* TrocarEstadoAppIntent.swift */,
 				FD5BC49C2B040F0C00057D28 /* CozinhaProvider.swift */,

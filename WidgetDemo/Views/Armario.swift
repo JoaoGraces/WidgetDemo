@@ -30,6 +30,7 @@ struct Armario: View {
             
             Button ("Tirar acessórios") {
                 self.clothes = "Buddy"
+                WidgetCenter.shared.reloadTimelines(ofKind: "WidgetArmarioExtension")
             }
         }
     }

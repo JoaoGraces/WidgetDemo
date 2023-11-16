@@ -245,33 +245,33 @@ struct WidgetArmarioExtensionEntryView : View {
                 
                 HStack{
                     Button(intent: LogEntryArmario1AppIntent()){
-                        Image(systemName: "fork.knife.circle")
+                        Image("gravata")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 25, height: 25)
+                            .frame(width: 50, height: 50)
                             .foregroundStyle(.green)
                     }
                     Button(intent: LogEntryArmario2AppIntent()){
-                        Image(systemName: "fork.knife.circle")
+                        Image("chapeu")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 25, height: 25)
+                            .frame(width: 50, height: 50)
                             .foregroundStyle(.green)
                     }
                 }
                 HStack{
                     Button(intent: LogEntryArmario3AppIntent()){
-                        Image(systemName: "fork.knife.circle")
+                        Image("cartola")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 25, height: 25)
+                            .frame(width: 50, height: 50)
                             .foregroundStyle(.green)
                     }
                     Button(intent: LogEntryArmario4AppIntent()){
-                        Image(systemName: "fork.knife.circle")
+                        Image("pirulito")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 25, height: 25)
+                            .frame(width: 50, height: 50)
                             .foregroundStyle(.green)
                     }
                 }

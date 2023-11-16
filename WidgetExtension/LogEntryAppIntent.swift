@@ -26,7 +26,7 @@ struct LogEntryAppIntent: AppIntent {
 struct LogEntryArmario1AppIntent: AppIntent {
 
     
-    var roupa: String = "Buddy"
+    var roupa: String = "gravataBuddy"
 
     init() {
         
@@ -70,7 +70,7 @@ struct LogEntryArmario2AppIntent: AppIntent {
 struct LogEntryArmario3AppIntent: AppIntent {
 
     
-    var roupa: String = "Buddy"
+    var roupa: String = "cartolaBuddy"
 
     init() {
         
@@ -92,7 +92,7 @@ struct LogEntryArmario3AppIntent: AppIntent {
 struct LogEntryArmario4AppIntent: AppIntent {
 
     
-    var roupa: String = "BuddyDormindo"
+    var roupa: String = "pirulitoBuddy"
 
     init() {
         
